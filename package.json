@@ -1,21 +1,43 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "booking-platform-monorepo",
+  "version": "1.0.0",
   "private": true,
+  "description": "Booking platform monorepo containing multiple applications and packages",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "pnpm run --parallel dev",
+    "dev:storefront": "pnpm --filter @booking-platform/storefront dev",
+    "dev:admin": "pnpm --filter @booking-platform/admin dev",
+    "dev:owner": "pnpm --filter @booking-platform/owner dev",
+    "build": "pnpm run --recursive build",
+    "build:storefront": "pnpm --filter @booking-platform/storefront build",
+    "build:admin": "pnpm --filter @booking-platform/admin build",
+    "build:owner": "pnpm --filter @booking-platform/owner build",
+    "build:shared": "pnpm --filter '@booking-platform/shared-*' build",
+    "lint": "pnpm run --recursive lint",
+    "lint:apps": "pnpm --filter './apps/*' lint",
+    "lint:shared": "pnpm --filter './shared/*' lint",
+    "clean": "pnpm run --recursive clean",
+    "install:all": "pnpm install"
   },
-  "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.4.2"
-  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "devDependencies": {
-    "eslint": "^9",
-    "eslint-config-next": "15.4.2",
-    "@eslint/eslintrc": "^3"
-  }
+    "pnpm": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://milosandrejic@github.com/milosandrejic/booking-platform-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milosandrejic/booking-platform-web/issues"
+  },
+  "homepage": "https://github.com/milosandrejic/booking-platform-web#readme"
 }

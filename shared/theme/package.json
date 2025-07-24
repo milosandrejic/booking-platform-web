@@ -7,10 +7,10 @@
   "scripts": {
     "build": "echo 'Building theme package'",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "clean": "rm -rf dist"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",

@@ -13,7 +13,10 @@
     "build:admin": "pnpm --filter @booking-platform/admin build",
     "build:owner": "pnpm --filter @booking-platform/owner build",
     "build:shared": "pnpm --filter '@booking-platform/shared-*' build",
-    "lint": "pnpm run --recursive lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:all": "pnpm run --recursive lint",
+    "lint:fix:all": "pnpm run --recursive lint:fix",
     "lint:apps": "pnpm --filter './apps/*' lint",
     "lint:shared": "pnpm --filter './shared/*' lint",
     "clean": "pnpm run --recursive clean",
@@ -24,7 +27,13 @@
     "shared/*"
   ],
   "devDependencies": {
-    "pnpm": "^8.0.0"
+    "pnpm": "^8.0.0",
+    "@eslint/js": "^9.31.0",
+    "@stylistic/eslint-plugin": "^5.2.2",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.14.0"
   },
   "engines": {
     "node": ">=18",

@@ -15,7 +15,8 @@
   },
   "peerDependencies": {
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {
     "eslint": "^9"

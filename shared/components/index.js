@@ -1,8 +1,10 @@
 // Shared UI Components
-// This package will contain reusable components across all applications
+// This package contains reusable components across all applications
 
-// Placeholder exports
-export const componentsReady = true;
+// Component exports
+export { default as Container } from "./src/Container/index.js";
+export { default as Button } from "./src/Button/index.js";
+export { default as Typography } from "./src/Typography/index.js";
 
 // Future exports:
 // export { default as Header } from './Header/Header.jsx';

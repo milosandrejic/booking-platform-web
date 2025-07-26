@@ -1,3 +1,1 @@
-// Main styles file - imports variables and mixins
-@import 'variables';
-@import 'mixins';
+@forward 'variables';

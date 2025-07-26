@@ -9,7 +9,9 @@
     "build:watch": "sass src:dist --watch --no-source-map",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
+    "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@booking-platform-shared/theme": "workspace:*",
@@ -20,6 +22,13 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "eslint": "^9"
+    "eslint": "^9",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-links": "^8.4.7",
+    "storybook": "^8.4.7",
+    "vite": "^6.0.7"
   }
 }

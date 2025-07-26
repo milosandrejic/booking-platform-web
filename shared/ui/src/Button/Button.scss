@@ -1,28 +1,91 @@
-@import '../styles/index';
+@use '../styles/variables' as *;
+@use 'sass:color';
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-xl;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  outline: none;
+  
   &--size-small {
-    @include md-comp-button-size-small;
+    padding: $spacing-2 $spacing-3;
+    min-height: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
   }
   
   &--size-medium {
-    @include md-comp-button-size-medium;
+    padding: $spacing-2 $spacing-6;
+    min-height: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
   }
   
   &--size-large {
-    @include md-comp-button-size-large;
+    padding: $spacing-3 $spacing-8;
+    min-height: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
   }
   
   &--variant-filled {
-    @include md-comp-filled-button;
+    background-color: $primary;
+    color: $on-primary;
+    border: none;
+    
+    &:hover:not(:disabled) {
+      background-color: color.adjust($primary, $lightness: -5%);
+    }
+    
+    &:disabled {
+      background-color: rgba($on-surface, 0.12);
+      color: rgba($on-surface, 0.38);
+      cursor: not-allowed;
+    }
   }
   
   &--variant-outlined {
-    @include md-comp-outlined-button;
+    background-color: transparent;
+    color: $primary;
+    border: 1px solid $outline;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($primary, 0.08);
+    }
+    
+    &:disabled {
+      color: rgba($on-surface, 0.38);
+      border-color: rgba($on-surface, 0.12);
+      cursor: not-allowed;
+    }
   }
   
   &--variant-text {
-    @include md-comp-text-button;
+    background-color: transparent;
+    color: $primary;
+    border: none;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($primary, 0.08);
+    }
+    
+    &:disabled {
+      color: rgba($on-surface, 0.38);
+      cursor: not-allowed;
+    }
   }
   
   &--fullWidth {
@@ -30,14 +93,14 @@
   }
   
   &__startIcon {
-    margin-right: $md-sys-spacing-2;
+    margin-right: $spacing-2;
     display: flex;
     align-items: center;
     font-size: 1.125rem;
   }
   
   &__endIcon {
-    margin-left: $md-sys-spacing-2;
+    margin-left: $spacing-2;
     display: flex;
     align-items: center;
     font-size: 1.125rem;

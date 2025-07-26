@@ -1,4 +1,5 @@
 import "./Button.scss";
+import { useRef } from "react";
 
 const Button = ({ 
   children, 
@@ -14,6 +15,19 @@ const Button = ({
   endIcon,
   ...props 
 }) => {
+  const buttonRef = useRef(null);
+
+  const handleClick = (event) => {
+    // Remove focus after click to prevent persistent hover state
+    if (buttonRef.current) {
+      buttonRef.current.blur();
+    }
+    
+    if (onClick) {
+      onClick(event);
+    }
+  };
+
   const classes = [
     "button",
     `button--variant-${variant}`,
@@ -24,10 +38,11 @@ const Button = ({
 
   return (
     <button
+      ref={buttonRef}
       className={classes}
       style={style}
       disabled={disabled}
-      onClick={onClick}
+      onClick={handleClick}
       type={type}
       {...props}
     >

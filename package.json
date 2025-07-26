@@ -20,7 +20,9 @@
     "lint:apps": "pnpm --filter './apps/*' lint",
     "lint:shared": "pnpm --filter './shared/*' lint",
     "clean": "pnpm run --recursive clean",
-    "install:all": "pnpm install"
+    "install:all": "pnpm install",
+    "storybook": "pnpm --filter @booking-platform-shared/ui storybook",
+    "build-storybook": "pnpm --filter @booking-platform-shared/ui build-storybook"
   },
   "workspaces": [
     "apps/*",

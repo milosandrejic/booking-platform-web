@@ -33,35 +33,17 @@ const injectCSSVariables = (themeObject) => {
     }
   });
 
-  // Material Design 3 Color Variables - Map your theme to MD3 variables
-  cssVariables["--md-sys-color-primary"] = themeObject.colors.primary.main;
-  cssVariables["--md-sys-color-on-primary"] = themeObject.colors.primary.contrastText;
-  cssVariables["--md-sys-color-primary-container"] = themeObject.colors.primary.light;
-  cssVariables["--md-sys-color-on-primary-container"] = themeObject.colors.primary.dark;
-  
-  cssVariables["--md-sys-color-secondary"] = themeObject.colors.secondary.main;
-  cssVariables["--md-sys-color-on-secondary"] = themeObject.colors.secondary.contrastText;
-  cssVariables["--md-sys-color-secondary-container"] = themeObject.colors.secondary.light;
-  cssVariables["--md-sys-color-on-secondary-container"] = themeObject.colors.secondary.dark;
-  
-  cssVariables["--md-sys-color-tertiary"] = themeObject.colors.info.main;
-  cssVariables["--md-sys-color-on-tertiary"] = themeObject.colors.info.contrastText;
-  cssVariables["--md-sys-color-tertiary-container"] = themeObject.colors.info.light;
-  cssVariables["--md-sys-color-on-tertiary-container"] = themeObject.colors.info.dark;
-  
-  cssVariables["--md-sys-color-error"] = themeObject.colors.error.main;
-  cssVariables["--md-sys-color-on-error"] = themeObject.colors.error.contrastText;
-  cssVariables["--md-sys-color-error-container"] = themeObject.colors.error.light;
-  cssVariables["--md-sys-color-on-error-container"] = themeObject.colors.error.dark;
-  
-  cssVariables["--md-sys-color-background"] = themeObject.colors.background.default;
-  cssVariables["--md-sys-color-on-background"] = themeObject.colors.text.primary;
-  cssVariables["--md-sys-color-surface"] = themeObject.colors.background.paper;
-  cssVariables["--md-sys-color-on-surface"] = themeObject.colors.text.primary;
-  cssVariables["--md-sys-color-surface-variant"] = themeObject.colors.grey[50];
-  cssVariables["--md-sys-color-on-surface-variant"] = themeObject.colors.text.secondary;
-  cssVariables["--md-sys-color-outline"] = themeObject.colors.grey[300];
-  cssVariables["--md-sys-color-outline-variant"] = themeObject.colors.grey[200];
+  // Simple Color Variables - Map your theme to clean variable names
+  cssVariables["--primary"] = themeObject.colors.primary.main;
+  cssVariables["--on-primary"] = themeObject.colors.primary.contrastText;
+  cssVariables["--secondary"] = themeObject.colors.secondary.main;
+  cssVariables["--error"] = themeObject.colors.error.main;
+  cssVariables["--background"] = themeObject.colors.background.default;
+  cssVariables["--on-background"] = themeObject.colors.text.primary;
+  cssVariables["--surface"] = themeObject.colors.background.paper;
+  cssVariables["--on-surface"] = themeObject.colors.text.primary;
+  cssVariables["--on-surface-variant"] = themeObject.colors.text.secondary;
+  cssVariables["--outline"] = themeObject.colors.grey[300];
   
   // Typography
   Object.entries(themeObject.typography).forEach(([variant, styles]) => {

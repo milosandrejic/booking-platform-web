@@ -8,7 +8,7 @@
     "build": "echo 'Building theme package'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
   },
   "dependencies": {},
   "peerDependencies": {

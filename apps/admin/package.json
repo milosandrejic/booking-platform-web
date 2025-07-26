@@ -9,7 +9,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
   },
   "dependencies": {
     "react": "^19.0.0",

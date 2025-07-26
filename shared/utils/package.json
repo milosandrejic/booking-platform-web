@@ -8,7 +8,7 @@
     "build": "echo 'Building utils package'",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
   },
   "devDependencies": {
     "eslint": "^9"

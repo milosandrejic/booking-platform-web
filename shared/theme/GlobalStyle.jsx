@@ -1,128 +1,55 @@
-import { createGlobalStyle } from "styled-components";
+"use client";
 
-export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Thin.ttf') format('truetype');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-ExtraLight.ttf') format('truetype');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-SemiBold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-ExtraBold.ttf') format('truetype');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-  }
+import { useEffect } from "react";
+import { useTheme } from "./ThemeProvider.jsx";
 
-  /* Italic variants */
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Roboto';
-    src: url('./shared/theme/fonts/Roboto-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-  }
+// Global styles as a React component that injects CSS
+export const GlobalStyle = () => {
+  const theme = useTheme();
 
-  * {
-    box-sizing: border-box;
-  }
+  useEffect(() => {
+    // Create or update the global style element
+    let styleElement = document.getElementById("booking-platform-global-styles");
+    
+    if (!styleElement) {
+      styleElement = document.createElement("style");
+      styleElement.id = "booking-platform-global-styles";
+      document.head.appendChild(styleElement);
+    }
 
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: ${({ theme }) => theme.fontFamily};
-    color: ${({ theme }) => theme.colors.text.primary};
-    background-color: ${({ theme }) => theme.colors.background.default};
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
+    styleElement.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@` +
+      `0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+      
+      * {
+        box-sizing: border-box;
+      }
 
-  h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
-  }
-`;
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: ${theme.fontFamily};
+        color: ${theme.colors.text.primary};
+        background-color: ${theme.colors.background.default};
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+      }
+    `;
+
+    // Cleanup function
+    return () => {
+      const element = document.getElementById("booking-platform-global-styles");
+      if (element) {
+        element.remove();
+      }
+    };
+  }, [theme]);
+
+  return null; // This component doesn't render anything visible
+};
 
 export default GlobalStyle;

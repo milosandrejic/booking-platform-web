@@ -5,12 +5,12 @@ function App() {
   return (
     <ThemeProvider>
       <Container maxWidth="xl">
-        <Typography variant="h1">Admin Portal</Typography>
-        <Typography variant="body1">
+        <Typography variant="headlineLarge">Admin Portal</Typography>
+        <Typography variant="bodyLarge">
           System administration and platform management dashboard.
         </Typography>
         
-        <Typography variant="h2" style={{ marginTop: "40px" }}>
+        <Typography variant="headlineMedium" style={{ marginTop: "40px" }}>
           Platform Overview
         </Typography>
         
@@ -21,23 +21,23 @@ function App() {
           marginTop: "24px" 
         }}>
           <div style={{ padding: "24px", backgroundColor: "#f5f5f5", borderRadius: "8px" }}>
-            <Typography variant="h3">Users</Typography>
-            <Typography variant="h4" color="primary">1,247</Typography>
+            <Typography variant="titleLarge">Users</Typography>
+            <Typography variant="headlineSmall" color="primary">1,247</Typography>
           </div>
           <div style={{ padding: "24px", backgroundColor: "#f5f5f5", borderRadius: "8px" }}>
-            <Typography variant="h3">Properties</Typography>
-            <Typography variant="h4" color="primary">342</Typography>
+            <Typography variant="titleLarge">Properties</Typography>
+            <Typography variant="headlineSmall" color="primary">342</Typography>
           </div>
           <div style={{ padding: "24px", backgroundColor: "#f5f5f5", borderRadius: "8px" }}>
-            <Typography variant="h3">Bookings</Typography>
-            <Typography variant="h4" color="primary">5,891</Typography>
+            <Typography variant="titleLarge">Bookings</Typography>
+            <Typography variant="headlineSmall" color="primary">5,891</Typography>
           </div>
         </div>
 
         <div style={{ display: "flex", gap: "16px", marginTop: "32px" }}>
-          <Button variant="primary">User Management</Button>
-          <Button variant="secondary">Property Approval</Button>
-          <Button variant="outline">System Settings</Button>
+          <Button variant="filled">User Management</Button>
+          <Button variant="outlined">Property Approval</Button>
+          <Button variant="text">System Settings</Button>
         </div>
       </Container>
     </ThemeProvider>

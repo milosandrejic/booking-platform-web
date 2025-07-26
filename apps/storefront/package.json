@@ -12,6 +12,8 @@
     "clean": "rm -rf .next dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
   },
   "dependencies": {
+    "@booking-platform-shared/theme": "workspace:*",
+    "@booking-platform-shared/ui": "workspace:*",
     "next": "15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"

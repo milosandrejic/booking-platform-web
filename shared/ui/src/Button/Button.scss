@@ -1,0 +1,45 @@
+@import '../styles/index';
+
+.button {
+  &--size-small {
+    @include md-comp-button-size-small;
+  }
+  
+  &--size-medium {
+    @include md-comp-button-size-medium;
+  }
+  
+  &--size-large {
+    @include md-comp-button-size-large;
+  }
+  
+  &--variant-filled {
+    @include md-comp-filled-button;
+  }
+  
+  &--variant-outlined {
+    @include md-comp-outlined-button;
+  }
+  
+  &--variant-text {
+    @include md-comp-text-button;
+  }
+  
+  &--fullWidth {
+    width: 100%;
+  }
+  
+  &__startIcon {
+    margin-right: $md-sys-spacing-2;
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+  }
+  
+  &__endIcon {
+    margin-left: $md-sys-spacing-2;
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+  }
+}

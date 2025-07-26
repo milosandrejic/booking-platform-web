@@ -6,6 +6,9 @@ export { default as Container } from "./src/Container/index.js";
 export { default as Button } from "./src/Button/index.js";
 export { default as Typography } from "./src/Typography/index.js";
 
+// CSS utilities
+export { generateCSSVariables, injectCSSVariables } from "./src/utils/cssVariables.js";
+
 // Future exports:
 // export { default as Header } from './Header/Header.jsx';
 // export { default as Footer } from './Footer/Footer.jsx';

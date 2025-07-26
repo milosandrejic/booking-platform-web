@@ -5,18 +5,19 @@
   "description": "Shared UI components for the booking platform",
   "main": "index.js",
   "scripts": {
-    "build": "echo 'Building components package'",
+    "build": "sass src:dist --no-source-map",
+    "build:watch": "sass src:dist --watch --no-source-map",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "clean": "rm -rf dist node_modules package-lock.json yarn.lock pnpm-lock.yaml"
   },
   "dependencies": {
-    "@booking-platform-shared/theme": "workspace:*"
+    "@booking-platform-shared/theme": "workspace:*",
+    "sass": "^1.89.2"
   },
   "peerDependencies": {
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "styled-components": "^6.0.0"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "eslint": "^9"

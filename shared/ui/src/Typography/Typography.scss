@@ -1,0 +1,131 @@
+@import '../styles/index';
+
+.typography {
+  margin: 0;
+  color: $md-sys-color-on-surface;
+  
+  // Material Design 3 Type Scale variants
+  &--variant-displayLarge {
+    @include md-typescale-display-large;
+  }
+  
+  &--variant-displayMedium {
+    @include md-typescale-display-medium;
+  }
+  
+  &--variant-displaySmall {
+    @include md-typescale-display-small;
+  }
+  
+  &--variant-headlineLarge {
+    @include md-typescale-headline-large;
+  }
+  
+  &--variant-headlineMedium {
+    @include md-typescale-headline-medium;
+  }
+  
+  &--variant-headlineSmall {
+    @include md-typescale-headline-small;
+  }
+  
+  &--variant-titleLarge {
+    @include md-typescale-title-large;
+  }
+  
+  &--variant-titleMedium {
+    @include md-typescale-title-medium;
+  }
+  
+  &--variant-titleSmall {
+    @include md-typescale-title-small;
+  }
+  
+  &--variant-bodyLarge {
+    @include md-typescale-body-large;
+  }
+  
+  &--variant-bodyMedium {
+    @include md-typescale-body-medium;
+  }
+  
+  &--variant-bodySmall {
+    @include md-typescale-body-small;
+  }
+  
+  &--variant-labelLarge {
+    @include md-typescale-label-large;
+  }
+  
+  &--variant-labelMedium {
+    @include md-typescale-label-medium;
+  }
+  
+  &--variant-labelSmall {
+    @include md-typescale-label-small;
+  }
+  
+  // Color variants using MD3 color system
+  &--color-primary {
+    color: $md-sys-color-primary;
+  }
+  
+  &--color-secondary {
+    color: $md-sys-color-secondary;
+  }
+  
+  &--color-tertiary {
+    color: $md-sys-color-tertiary;
+  }
+  
+  &--color-error {
+    color: $md-sys-color-error;
+  }
+  
+  &--color-onSurface {
+    color: $md-sys-color-on-surface;
+  }
+  
+  &--color-onSurfaceVariant {
+    color: $md-sys-color-on-surface-variant;
+  }
+  
+  &--color-outline {
+    color: $md-sys-color-outline;
+  }
+  
+  &--color-inversePrimary {
+    color: $md-sys-color-inverse-primary;
+  }
+  
+  &--color-inverseOnSurface {
+    color: $md-sys-color-inverse-on-surface;
+  }
+  
+  // Alignment
+  &--align-left {
+    text-align: left;
+  }
+  
+  &--align-center {
+    text-align: center;
+  }
+  
+  &--align-right {
+    text-align: right;
+  }
+  
+  &--align-justify {
+    text-align: justify;
+  }
+  
+  // Gutters - using MD3 spacing
+  &--gutterBottom {
+    margin-bottom: $md-sys-spacing-4;
+  }
+  
+  // No wrap
+  &--noWrap {
+    @include md-truncate-text;
+  }
+}
